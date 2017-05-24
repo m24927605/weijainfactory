@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%include ./master/master_head.ejs %>
+</head><!--/head-->
+<body>
+<%include ./master/menu.ejs %>
+    <section id="main-slider">
+        <div class="carousel slide wet-asphalt">
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active" style="background-image: url(images/sample/Banner03.jpg);background-size:100% auto;">
+                </div><!--/.item-->
+                <div class="item" style="background-image: url(images/sample/Banner06.jpg);background-size:100% auto;">
+                </div><!--/.item-->
+                <div class="item" style="background-image: url(images/sample/Banner06.jpg);background-size:100% auto;">
+                </div><!--/.item-->
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+            <i class="icon-angle-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+            <i class="icon-angle-right"></i>
+        </a>
+    </section><!--/#main-slider-->
+
+    <section id="services" class="silver">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="icon-md"><img class="icon-md" src="images/ico/new.ico"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">最新消息</h3>
+                            <a href="#"><p class="index-new">
+                                穩鍵精密機械有限公司近年大舉增加資本支出提升製程，也連帶拉抬台灣本土半導體供應鏈；台積公司製造技術副總經理林錦坤表示，台灣半導體設備本土化發展已有不錯進展，目前本土零件與材料比重已達7成水準。林錦坤說，半導體設備本土化發展，本土零件與材料比重已從過去的30%至40%，攀高到目前的70%；後段設備方面，本土化比重約30%至40%。台積電與台廠合作夥伴組成的大同盟（Grand Alliance），隨著台積電持續提升製程，擴大資本支出，也讓相關台廠受惠。包括光罩及晶圓傳送盒廠家登(3680)、再生晶圓廠辛耘(3583)、材料及可靠性檢測廠閎康等都被列為台積電概念股。林錦坤表示，半導體業是技術與資本密集的產業，1座晶圓廠投資動輒新台幣數千億元，設備投資占大宗；機器設備效能攸關競爭力，機器設備價值發揮極大化，將使投資效益極大化。台積電與國立交通大學今日共同舉辦的「第一屆台積設備創意競賽」，今天在交大進行決賽。這次舉辦競賽，主要希望透過產學合作，發掘與培育半導體設備人才，一方面讓學生提早知道產業界需求，讓所學能與產業界連結，並吸引更多學生投入半導體業。
+                            </p></a>
+                        </div>
+                    </div>
+                </div><!--/.col-md-4-->
+                <div class="col-md-6 col-sm-6">
+                    <div class="media">
+                        <div class="pull-left">
+                            <i class="icon-md"><img class="icon-md" src="images/ico/new.ico"></i>
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">最新消息</h3>
+                            <a href="#"><p class="index-new">世大運開閉幕8月登場，但國民黨市議員徐弘庭昨質詢指，根據開閉幕合約，演出總彩排時文化局即撥款97％費用，約3.5億元，顯違常理、質疑涉嫌圖利，要求北市府徹查。台北市長柯文哲今出席活動後受訪時說，突然問他不知道合不合理，但確信一定合法。</p>
+                        </div></a>
+                    </div>
+                </div><!--/.col-md-4-->
+            </div>
+        </div>
+    </section><!--/#services-->
+
+    <section class="silver">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>服務項目</h3>
+                   <ul class="list-group">
+                      <li class="list-group-item list-group-item-success">主軸加工</li>
+                      <li class="list-group-item list-group-item-info">內徑研磨</li>
+                      <li class="list-group-item list-group-item-warning">外徑研磨</li>
+                      <li class="list-group-item list-group-item-danger">平面研磨</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>最新職缺</h3>
+                    <table class="table table-hover table-info table-striped">
+                      <thead>
+                        <tr>
+                          <th>日期</th>
+                          <th>標題</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>2017/05/21</td>
+                          <td><a href="#">專業工程師</a></td>
+                        </tr>
+                        <tr>
+                          <td>2017/05/21</td>
+                          <td><a href="#">專業設計師</a></td>
+                        </tr>
+                        <tr>
+                          <td>2017/05/21</td>
+                          <td><a href="#">業務</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div><!--/.row-->
+        </div>
+    </section><!--/#recent-works-->
+<%include ./master/footer.ejs %>
+<%include ./master/bodyend.ejs %>
+</body>
+</html>
