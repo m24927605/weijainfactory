@@ -1490,3 +1490,14 @@ button.list-group-item-danger.active {
 .table-responsive.table-bordered {
   border: 0;
 }
+
+/*照片輪播需要*/
+.full-screen {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.item>a{
+    display: block;
+    height: 100%;
+}
