@@ -1,0 +1,37 @@
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+     <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZAOw6Gp9jZBwWMnxApN7_VK3NgdLselU&sensor=false"></script>
+    <script>
+        function initialize() {
+            var map_canvas = document.getElementById('map');
+            var map_options = {
+                center: new google.maps.LatLng(24.095583, 120.70657600000004),
+                zoom:16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+         
+            var map = new google.maps.Map(map_canvas, map_options)
+         
+            var marke = new google.maps.Marker({    
+                    position: new google.maps.LatLng(24.095583, 120.70657600000004),
+                    title:'新莊體育館',
+                    map:map 
+            }); 
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+</script>

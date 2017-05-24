@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%include ./master/master_head.ejs %>
+<script>
+  /*定義取url參數的function*/
+   function getParameterByUrl(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+/*google search的function*/
+function googleSearch(){
+ var cx = '005138495103874856224:4oujqsoded4';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+}
+
+/*將google search的input值傳到url當參數*/
+function changeHref(){
+ window.location.href ="search-result?q="+$('#searchText').val();
+ googleSearch();
+}
+
+  </script>
+</head><!--/head-->
+<body>
+<%include ./master/menu.ejs %>
+    <div  class="container">
+        <div class="row">
+            <div class="col-sm-12"><h1>站內搜尋</h1></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <input  type="text" style="width: 80%;color:black" id="searchText">
+                <input  type="button" class="btn btn-danger btn-sm" id="searchButton" value="搜尋" onclick="changeHref()">
+                <gcse:searchresults-only></gcse:searchresults-only>
+            </div>
+        </div>
+    </div><!--/#contact-page-->
+
+
+<%include ./master/footer.ejs %>
+<%include ./master/bodyend.ejs %>
+</body>
+</html>
