@@ -20,7 +20,7 @@
         function initialize() {
             var map_canvas = document.getElementById('map');
             var map_options = {
-                center: new google.maps.LatLng(24.095583, 120.70657600000004),
+                center: new google.maps.LatLng(24.076974, 120.704240),
                 zoom:16,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             }
@@ -28,10 +28,18 @@
             var map = new google.maps.Map(map_canvas, map_options)
          
             var marke = new google.maps.Marker({    
-                    position: new google.maps.LatLng(24.095583, 120.70657600000004),
+                    position: new google.maps.LatLng(24.076974, 120.704240),
                     title:'穩鍵精密機械有限公司',
                     map:map 
             }); 
         }
         google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+    </script>
+    <script>
+    document.querySelector('#search_input').addEventListener('keypress', function (e) {
+        var key = e.which || e.keyCode;
+        if (key === 13) { // 13 is enter
+          window.location.href ="/search?q="+$('#search_input').val();
+        }
+    });
+    </script>
