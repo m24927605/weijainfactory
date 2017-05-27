@@ -3,6 +3,17 @@
 <head>
 <%include ./master/master_head.ejs %>
 <script>
+  (function() {
+    var cx = '005138495103874856224:4oujqsoded4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<script>
   /*定義取url參數的function*/
    function getParameterByUrl(name, url) {
     if (!url) {
