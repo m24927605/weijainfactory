@@ -102,7 +102,7 @@
 <%include ./master/bodyend.ejs %>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('.icon-angle-left').click();
+        setInterval(function(){ $('.icon-angle-right').click(); }, 3000);     
     });
 </script>
 </body>
