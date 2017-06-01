@@ -29,6 +29,10 @@ router.get('/search', function(req, res, next) {
   res.render('./search', { title: 'Express' });
 });
 
+router.get('/showip', function(req, res, next) {
+  res.send('ip:'+req.connection.remoteAddress);
+});
+
 router.get('/contact', function(req, res, next) {
   res.render('./contact', { title: 'Express' });
 });
