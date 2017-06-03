@@ -3,7 +3,7 @@ const router = express.Router();
 //引用 nodemailer
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
-const get_trusted_ip = require('ipware')().get_trusted_ip;
+const get_ip = require('ipware')().get_ip;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('./index', { title: 'Express' });
