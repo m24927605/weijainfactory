@@ -4,10 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var ejs=require('ejs');
+var ejs = require('ejs');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -25,18 +24,40 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use('/about', function(req,res,next){
+  redirectToIndex(req,res,next);
+});
+app.use('/machines', function(req,res,next){
+  redirectToIndex(req,res,next);
+});
+app.use('/news', function(req,res,next){
+  redirectToIndex(req,res,next);
+});
+app.use('/search', function(req,res,next){
+  redirectToIndex(req,res,next);
+});
+app.use('/contact', function(req,res,next){
+  redirectToIndex(req,res,next);
+});
 app.use('/', index);
 
-
+//20171213 哲嘉要求，點擊搜尋引擎的任何搜尋結果都轉址到首頁。
+function redirectToIndex(req, res, next) {
+  if (req.query.type !== 'menu'){
+    res.redirect('/index');
+  }
+  next();
+}
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
