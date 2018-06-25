@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-sm-12"><h1>聯絡我們</h1></div>
         </div>
-        <form method="POST" action="/contact">
+        <form id="sendEmail" method="POST" action="/contact">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
@@ -47,7 +47,27 @@
             </div>
         </form>
     </section><!--/#contact-page-->
+<script>
+var frm = $('#sendEmail');
 
+    frm.submit(function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (result) {
+                alert(result.message)
+            },
+            error: function (err) {
+                console.error(err);
+                alert('發信失敗，請直撥公司電話(04) 2332-2581');
+            },
+        });
+    });
+</script>
 <%include ./master/footer.ejs %>
 <%include ./master/bodyend.ejs %>
 </body>

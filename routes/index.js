@@ -81,9 +81,13 @@ router.post('/contact', function (req, res, next) {
   //發送信件方法
   transporter.sendMail(emailOptions, function (error, info) {
     if (error) {
-      console.log('send email problem:', error);
+      console.error('send email problem:', error);
+      res.json({
+        message: '發信失敗,請直撥公司電話(04) 2332-2581'
+      });
     } else {
       console.log('訊息發送: ' + info.response);
+      res.json({ message: '發信成功' });
     }
   });
   /*
