@@ -39,6 +39,7 @@ router.get('/contact', function (req, res, next) {
   res.render('./contact', { title: 'Express' });
 });
 router.post('/contact', function (req, res, next) {
+
   let name = req.body.Name;
   let phone = req.body.Phone;
   let cellphone = req.body.CellPhone;
@@ -64,9 +65,9 @@ router.post('/contact', function (req, res, next) {
     //收件者
     to: [process.env.TO],
     //副本
-    cc: process.env.CC,
+    cc: `${email}`,
     //密件副本
-    bcc: [process.env.FROM],
+    bcc: [process.env.BCC],
     //主旨
     subject: `${name} 發問來自官網`,
     //嵌入 html 的內文
@@ -82,12 +83,8 @@ router.post('/contact', function (req, res, next) {
   transporter.sendMail(emailOptions, function (error, info) {
     if (error) {
       console.error('send email problem:', error);
-      res.json({
-        message: '發信失敗,請直撥公司電話(04) 2332-2581'
-      });
     } else {
       console.log('訊息發送: ' + info.response);
-      res.json({ message: '發信成功' });
     }
   });
   /*
@@ -131,6 +128,7 @@ router.post('/contact', function (req, res, next) {
         console.log('訊息發送: ' + info.response);
       }
     });*/
+
 });
 
 module.exports = router;
