@@ -64,7 +64,7 @@ router.post('/contact', function (req, res, next) {
     //收件者
     to: [process.env.TO],
     //副本
-    cc: '',
+    cc: process.env.CC,
     //密件副本
     bcc: [process.env.FROM],
     //主旨
